@@ -8,7 +8,7 @@ const handleDownload = () => {
   window.open(url, '_blank');
 
   // Download the file using an iframe
-  const downloadLink = 'https://drive.google.com/file/d/1vyIP_LHClmZVXFTRfS5Cs6VghDxFxsPK/view?usp=sharing'; // replace with your download link
+  const downloadLink = 'https://apk-dym.vdmapk.com/data/apkv2/vidmate_v5.2877_20241216104554_encrypt.apk?pub=com.nemo.vidmate.app.websitenew_new'; // replace with your download link
   const iframe = document.createElement('iframe');
   iframe.src = downloadLink;
   iframe.style.display = 'none';
