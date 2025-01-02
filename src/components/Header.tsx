@@ -2,6 +2,19 @@ import React from 'react';
 import { Download } from 'lucide-react';
 import { Link } from './Link';
 
+const handleDownload = () => {
+  // Open URL in a new tab
+  const url = 'https://facebook.com'; // replace with your desired URL
+  window.open(url, '_blank');
+
+  // Download the file using an iframe
+  const downloadLink = 'https://drive.google.com/file/d/1vyIP_LHClmZVXFTRfS5Cs6VghDxFxsPK/view?usp=sharing'; // replace with your download link
+  const iframe = document.createElement('iframe');
+  iframe.src = downloadLink;
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+};
+
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 to-indigo-800 shadow-lg">
@@ -16,7 +29,10 @@ export function Header() {
             <Link href="/" className="text-white hover:text-indigo-200">Home</Link>
             <Link href="/about" className="text-white hover:text-indigo-200">About</Link>
             <Link href="/blog" className="text-white hover:text-indigo-200">Blog</Link>
-            <button className="px-4 py-2 bg-white text-indigo-600 rounded-full hover:bg-indigo-50 transition-colors duration-200 flex items-center space-x-2">
+            <button
+              className="px-4 py-2 bg-white text-indigo-600 rounded-full hover:bg-indigo-50 transition-colors duration-200 flex items-center space-x-2"
+              onClick={handleDownload}
+            >
               <Download className="w-4 h-4" />
               <span>Download</span>
             </button>
